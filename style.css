@@ -249,13 +249,11 @@ body {
     height: 40px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     border: 1px solid var(--border-color);
 }
 
 .theme-toggle-container:hover {
     transform: scale(1.05);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     background: var(--primary-color-hover);
 }
 
@@ -276,7 +274,6 @@ body {
 
 #theme-toggle.ri-moon-line {
     color: #4070f4;
-    /* Blue color for moon icon */
     animation: pulse 1s ease-in-out;
 }
 
@@ -364,6 +361,7 @@ body {
     .theme-toggle-container {
         width: 36px;
         height: 36px;
+        margin: 0px 20px;
     }
 
     #theme-toggle {
