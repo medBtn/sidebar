@@ -361,10 +361,40 @@ body {
     .theme-toggle-container {
         width: 36px;
         height: 36px;
-        margin: 0px 20px;
+        margin: 0px 16px;
     }
 
     #theme-toggle {
         font-size: 20px;
     }
+}
+
+
+
+.setting-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--item-hover-text);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.16);
+    transition: all 0.3s ease;
+}
+
+.setting-btn:hover {
+    background-color: var(--primary-color-hover);
+    transform: scale(1.1);
+}
+.setting-btn i{
+    font-size: var(--icon-size);
+}
+
+.settings-button:hover {
+    background-color: var(--primary-color-hover);
+    transform: scale(1.1);
 }
