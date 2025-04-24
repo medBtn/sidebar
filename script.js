@@ -2,6 +2,10 @@ const sidebar = document.querySelector(".sidebar");
 const sidebarOpenBtn = document.querySelector("#sidebar-open");
 const sidebarCloseBtn = document.querySelector("#sidebar-close");
 const sidebarLockBtn = document.querySelector("#lock-icon");
+const body = document.body;
+
+// Theme variables
+let isDarkTheme = false;
 
 // functions
 const toggleLock = ()=>{
@@ -40,6 +44,41 @@ if(window.innerWidth < 800){
     sidebar.classList.remove("hoverable");
 }
 
+
+// Theme functions
+function toggleTheme() {
+    isDarkTheme = !isDarkTheme;
+    if (isDarkTheme) {
+        body.classList.add('dark-theme');
+        themeToggleBtn.className = 'ri-sun-line';
+    } else {
+        body.classList.remove('dark-theme');
+        themeToggleBtn.className = 'ri-moon-line';
+    }
+    // Save theme preference to localStorage
+    localStorage.setItem('darkTheme', isDarkTheme);
+}
+
+// Check for saved theme preference
+function loadTheme() {
+    const savedTheme = localStorage.getItem('darkTheme');
+    if (savedTheme === 'true') {
+        isDarkTheme = true;
+        body.classList.add('dark-theme');
+        themeToggleBtn.className = 'ri-sun-line';
+    } else {
+        themeToggleBtn.className = 'ri-moon-line';
+    }
+}
+
+// Get the theme toggle button from HTML
+const themeToggleBtn = document.querySelector('#theme-toggle');
+
+// Add event listener to theme toggle button
+themeToggleBtn.addEventListener('click', toggleTheme);
+
+// Initialize theme on page load
+loadTheme();
 
 // event listeners
 sidebarLockBtn.addEventListener('click', toggleLock);
